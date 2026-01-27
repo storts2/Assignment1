@@ -1,0 +1,38 @@
+html {
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.header-styling {
+    font-size: 3rem;
+}
+
+.form-styling {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label-styling {
+    font-size: 2rem;
+}
+
+.form-input-styling {
+    height: 2rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-color: black;
+}
+
+.form-button-styling {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #00c853;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: monospace;
+}
