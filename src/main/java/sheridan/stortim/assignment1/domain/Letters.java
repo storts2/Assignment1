@@ -31,4 +31,8 @@ public class Letters {
     public String getUpper() {
         return this.letters.toUpperCase();
     }
+
+    public String getLetters() {
+        return this.letters;
+    }
 }
