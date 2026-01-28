@@ -65,4 +65,8 @@ public class Alphabet {
     public List<String> getLetters() {
         return this.letters;
     }
+
+    public boolean isInAlphabet(String letter) {
+        return this.letters.contains(letter);
+    }
 }

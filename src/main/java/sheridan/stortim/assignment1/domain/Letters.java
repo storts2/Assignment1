@@ -12,14 +12,20 @@ public class Letters {
 
     public String symbolsToSpaces() {
 
-
-        String noSymbols;
+        Alphabet alp = new Alphabet();
+        String noSymbols = "";
 
         for (int i = 0; i < this.letters.length(); i++) {
             String letter = this.letters.substring(i, i + 1);
+            if (alp.isInAlphabet(letter)) {
+                noSymbols += letter;
+            }
+            else {
+                noSymbols += " ";
+            }
         }
 
-        return "a";
+        return noSymbols;
     }
 
     public String getUpper() {
