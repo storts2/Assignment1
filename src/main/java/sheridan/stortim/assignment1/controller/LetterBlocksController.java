@@ -26,9 +26,11 @@ public class LetterBlocksController {
     ) {
         Letters letters = new Letters(userInput);
         letters.symbolsToSpaces();
+        log.info(letters.getLetters());
         letters.getUpper();
+        log.info(letters.getLetters());
 
-        model.addAttribute("letters", userInput);
+        model.addAttribute("letters", letters.getLetters());
 
         return "output";
     }
@@ -41,6 +43,7 @@ public class LetterBlocksController {
     ) {
         Letters letters = new Letters(userInput);
         letters.encodeForCookies();
+        log.info(letters.getLetters());
 
         Cookie cookie = new Cookie("letters", letters.getLetters());
         cookie.setPath("/");
