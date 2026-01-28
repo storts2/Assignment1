@@ -7,9 +7,9 @@
     </head>
     <body>
         <h1 class="header-styling">Letter Block Converter</h1>
-        <form class="form-styling">
+        <form class="form-styling" th:action="@{/process}" method="post">
             <label class="form-label-styling">Input letters to convert</label>
-            <input class="form-input-styling" type="text" name="userInput">
+            <input class="form-input-styling" type="text" th:name="userInput">
             <button class="form-button-styling" type="submit">Process</button>
         </form>
         <div>
