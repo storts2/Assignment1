@@ -30,7 +30,7 @@ public class Alphabet {
         letters.add("T");
         letters.add("U");
         letters.add("V");
-        letters.add("Y");
+        letters.add("W");
         letters.add("X");
         letters.add("Y");
         letters.add("Z");
@@ -56,7 +56,7 @@ public class Alphabet {
         letters.add("t");
         letters.add("u");
         letters.add("v");
-        letters.add("y");
+        letters.add("w");
         letters.add("x");
         letters.add("y");
         letters.add("z");

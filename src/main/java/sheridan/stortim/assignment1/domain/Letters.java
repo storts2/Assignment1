@@ -1,7 +1,5 @@
 package sheridan.stortim.assignment1.domain;
 
-import java.util.*;
-
 public class Letters {
 
     String letters;
@@ -10,7 +8,7 @@ public class Letters {
         this.letters = userInput;
     }
 
-    public String symbolsToSpaces() {
+    public void symbolsToSpaces() {
 
         Alphabet alp = new Alphabet();
         String noSymbols = "";
@@ -25,11 +23,28 @@ public class Letters {
             }
         }
 
-        return noSymbols;
+        this.letters = noSymbols;
     }
 
-    public String getUpper() {
-        return this.letters.toUpperCase();
+    public void encodeForCookies() {
+        Alphabet alp = new Alphabet();
+        String encode = "";
+
+        for (int i = 0; i < this.letters.length(); i++) {
+            String letter = this.letters.substring(i, i + 1);
+            if (alp.isInAlphabet(letter)) {
+                encode += letter;
+            }
+            else {
+                encode += "&";
+            }
+        }
+
+        this.letters = encode;
+    }
+
+    public void getUpper() {
+        this.letters = this.letters.toUpperCase();
     }
 
     public String getLetters() {
