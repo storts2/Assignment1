@@ -66,4 +66,10 @@ public class LetterBlocksController {
 
         return "redirect:/output";
     }
+
+    @PostMapping("/reset")
+    public String resetPage(Model model) {
+        model.addAttribute("letters", new Letters("a"));
+        return "index";
+    }
 }

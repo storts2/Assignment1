@@ -36,3 +36,25 @@ html {
     font-size: 1rem;
     font-family: monospace;
 }
+
+.image-wrappers {
+    margin-bottom: 50px;
+}
+
+.reset-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.reset-button-styling {
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #00c853;
+    height: 2rem;
+    font-size: 1rem;
+    font-family: monospace;
+    padding-left: 100px;
+    padding-right: 100px;
+}
