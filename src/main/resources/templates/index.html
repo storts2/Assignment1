@@ -7,7 +7,16 @@
     </head>
     <body>
         <h1 class="header-styling">Letter Block Converter</h1>
-        <form class="form-styling" th:action="@{/process}" method="post">
+
+        <form class="form-styling" th:object="${letters}" th:action="@{/process}" method="post">
+
+            <th:block th:unless="${#fields.errors('*').isEmpty()}">
+                <h3>Input errors</h3>
+                <ul>
+                    <li th:each="e: ${#fields.errors('*')}" th:text="${e}">Message</li>
+                </ul>
+            </th:block>
+
             <label class="form-label-styling">Input letters to convert</label>
             <input class="form-input-styling" type="text" th:name="userInput">
             <button class="form-button-styling" type="submit">Process</button>

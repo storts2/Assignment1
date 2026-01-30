@@ -3,6 +3,7 @@ package sheridan.stortim.assignment1.controller;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,13 @@ import sheridan.stortim.assignment1.domain.Letters;
 @Slf4j
 @Validated
 public class LetterBlocksController {
+
+    @GetMapping("/")
+    public String input(Model model){
+        log.trace("called input()");
+        model.addAttribute("letters", new Letters("a"));
+        return "index";
+    }
 
     @GetMapping("/output")
     public String output(
@@ -38,11 +46,16 @@ public class LetterBlocksController {
 
     @PostMapping("/process")
     public String letterBlocksProcess(
-            @RequestParam @NotBlank(message = "Name cannot be empty") @Size(min = 1, max = 10, message = "")
-            String userInput,
-            HttpServletResponse response
+            @Validated Letters letters,
+            BindingResult bindingResult,
+            HttpServletResponse response,
+            Model model
     ) {
-        Letters letters = new Letters(userInput);
+        if(bindingResult.hasErrors()){
+            model.addAttribute(letters);
+            return "index";
+        }
+
         letters.encodeForCookies();
         log.info(letters.getLetters());
 
