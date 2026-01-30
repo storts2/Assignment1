@@ -29,8 +29,9 @@ public class LetterBlocksController {
         log.info(letters.getLetters());
         letters.getUpper();
         log.info(letters.getLetters());
+        letters.initializeList();
 
-        model.addAttribute("letters", letters.getLetters());
+        model.addAttribute("letters", letters.getList());
 
         return "output";
     }
