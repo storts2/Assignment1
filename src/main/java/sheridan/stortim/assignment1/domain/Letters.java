@@ -53,7 +53,7 @@ public class Letters {
         this.letters = encode;
     }
 
-    public void getUpper() {
+    public void setUpper() {
         this.letters = this.letters.toUpperCase();
     }
 

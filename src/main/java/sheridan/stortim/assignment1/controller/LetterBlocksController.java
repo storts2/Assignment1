@@ -35,7 +35,7 @@ public class LetterBlocksController {
         Letters letters = new Letters(userInput);
         letters.symbolsToSpaces();
         log.info(letters.getLetters());
-        letters.getUpper();
+        letters.setUpper();
         log.info(letters.getLetters());
         letters.initializeList();
 
