@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error 404</title>
+</head>
+<body>
+    <h1>Error 404</h1>
+    <p>The server is running, but something a user asked for does not exist</p>
+    <ul>
+        <li>Method:
+            <!--/*@thymesVar id="method" type="String"*/-->
+            <span th:text="${method}" class="value">Method</span>
+        </li>
+        <li>Path:
+            <!--/*@thymesVar id="path" type="String"*/-->
+            <span th:text="${path}" class="value">Path</span>
+        </li>
+    </ul>
+    <form th:action="@{/reset}" method="post">
+        <button class="form-button-styling" type="submit">Reset</button>
+    </form>
+</body>
+</html>
