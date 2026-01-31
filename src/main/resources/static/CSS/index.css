@@ -58,3 +58,11 @@ html {
     padding-left: 100px;
     padding-right: 100px;
 }
+
+.footer-styling {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
